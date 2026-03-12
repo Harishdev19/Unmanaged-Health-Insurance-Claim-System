@@ -1,0 +1,56 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:
+  { typeName: 'Claim Item',
+    typeNamePlural: 'Claim Items',
+    title: { type: #STANDARD, value: 'ItemId' },
+    description: { type: #STANDARD, value: 'TreatmentType' } }
+annotate view ZUHICP_ITM_22EE015 with
+{
+  @UI.facet: [
+    { id: 'ItemDetails',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Item Details',
+      position: 10 }
+  ]
+
+  @UI: { lineItem: [{ position: 10, label: 'Item ID' }],
+         identification: [{ position: 10, label: 'Item ID' }] }
+  ItemId;
+
+  @UI: { lineItem: [{ position: 20, label: 'Treatment Type' }],
+         identification: [{ position: 20, label: 'Treatment Type' }] }
+  TreatmentType;
+
+  @UI: { lineItem: [{ position: 30, label: 'Treatment Date' }],
+         identification: [{ position: 30, label: 'Treatment Date' }] }
+  TreatmentDate;
+
+  @UI: { lineItem: [{ position: 40, label: 'Doctor Name' }],
+         identification: [{ position: 40, label: 'Doctor Name' }] }
+  DoctorName;
+
+  @UI: { lineItem: [{ position: 50, label: 'Diagnosis Code' }],
+         identification: [{ position: 50, label: 'Diagnosis Code' }] }
+  DiagnosisCode;
+
+  @UI: { identification: [{ position: 55, label: 'Diagnosis Text' }] }
+  DiagnosisText;
+
+  @UI: { lineItem: [{ position: 60, label: 'Item Amount' }],
+         identification: [{ position: 60, label: 'Item Amount' }] }
+  ItemAmount;
+
+  @UI: { identification: [{ position: 65, label: 'Currency' }] }
+  Currency;
+
+  @UI: { lineItem: [{ position: 70, label: 'Item Status' }],
+         identification: [{ position: 70, label: 'Item Status' }] }
+  ItemStatus;
+
+  @UI: { identification: [{ position: 80, label: 'Approved Amount' }] }
+  ApprovedItemAmt;
+
+  @UI: { identification: [{ position: 90, label: 'Rejection Reason' }] }
+  RejectionReason;
+}

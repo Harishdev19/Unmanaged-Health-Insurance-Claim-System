@@ -1,0 +1,63 @@
+unmanaged implementation in class ZUHICBP_22EE015 unique;
+
+define behavior for ZUHICR_HDR_22EE015 alias ClaimHeader
+{
+  field ( readonly ) ClaimId;
+  field ( mandatory ) PatientName, PolicyNumber, ClaimDate, HospitalName;
+
+  create;
+  update;
+  delete;
+
+  association _ClaimItems { create; }
+
+  mapping for zuhi_hdr_22ee015
+  {
+    ClaimId          = claim_id;
+    PatientName      = patient_name;
+    PatientDob       = patient_dob;
+    PolicyNumber     = policy_number;
+    InsurerName      = insurer_name;
+    ClaimDate        = claim_date;
+    HospitalName     = hospital_name;
+    HospitalCity     = hospital_city;
+    TotalClaimAmount = total_claim_amount;
+    Currency         = currency;
+    OverallStatus    = overall_status;
+    ApprovedAmount   = approved_amount;
+    CreatedBy        = created_by;
+    CreatedAt        = created_at;
+    ChangedBy        = changed_by;
+    ChangedAt        = changed_at;
+  }
+}
+
+define behavior for ZUHICR_ITM_22EE015 alias ClaimItem
+{
+  field ( readonly )  ClaimId, ItemId;
+  field ( mandatory ) TreatmentType, ItemAmount, Currency;
+
+  create;
+  update;
+  delete;
+
+  mapping for zuhi_itm_22ee015
+  {
+    ClaimId         = claim_id;
+    ItemId          = item_id;
+    TreatmentType   = treatment_type;
+    TreatmentDate   = treatment_date;
+    DoctorName      = doctor_name;
+    DiagnosisCode   = diagnosis_code;
+    DiagnosisText   = diagnosis_text;
+    ItemAmount      = item_amount;
+    Currency        = currency;
+    ItemStatus      = item_status;
+    ApprovedItemAmt = approved_item_amt;
+    RejectionReason = rejection_reason;
+    CreatedBy       = created_by;
+    CreatedAt       = created_at;
+    ChangedBy       = changed_by;
+    ChangedAt       = changed_at;
+  }
+}

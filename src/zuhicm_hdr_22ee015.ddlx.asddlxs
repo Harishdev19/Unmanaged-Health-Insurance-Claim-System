@@ -1,0 +1,68 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:
+  { typeName: 'Claim Header',
+    typeNamePlural: 'Claim Headers',
+    title: { type: #STANDARD, value: 'ClaimId' },
+    description: { type: #STANDARD, value: 'PatientName' } }
+annotate view ZUHICP_HDR_22EE015 with
+{
+  @UI.facet: [
+    { id: 'HeaderInfo',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Claim Information',
+      position: 10 },
+    { id: 'ClaimItems',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'Claim Line Items',
+      position: 20,
+      targetElement: '_ClaimItems' }
+  ]
+
+  @UI: { lineItem: [{ position: 10, label: 'Claim ID' }],
+         identification: [{ position: 10, label: 'Claim ID' }],
+         selectionField: [{ position: 10 }] }
+  ClaimId;
+
+  @UI: { lineItem: [{ position: 20, label: 'Patient Name' }],
+         identification: [{ position: 20, label: 'Patient Name' }] }
+  PatientName;
+
+  @UI: { identification: [{ position: 25, label: 'Date of Birth' }] }
+  PatientDob;
+
+  @UI: { lineItem: [{ position: 30, label: 'Policy Number' }],
+         identification: [{ position: 30, label: 'Policy Number' }],
+         selectionField: [{ position: 20 }] }
+  PolicyNumber;
+
+  @UI: { identification: [{ position: 35, label: 'Insurer Name' }] }
+  InsurerName;
+
+  @UI: { lineItem: [{ position: 40, label: 'Claim Date' }],
+         identification: [{ position: 40, label: 'Claim Date' }] }
+  ClaimDate;
+
+  @UI: { lineItem: [{ position: 50, label: 'Hospital Name' }],
+         identification: [{ position: 50, label: 'Hospital Name' }] }
+  HospitalName;
+
+  @UI: { identification: [{ position: 55, label: 'Hospital City' }] }
+  HospitalCity;
+
+  @UI: { lineItem: [{ position: 60, label: 'Total Claim Amount' }],
+         identification: [{ position: 60, label: 'Total Claim Amount' }] }
+  TotalClaimAmount;
+
+  @UI: { identification: [{ position: 65, label: 'Currency' }] }
+  Currency;
+
+  @UI: { lineItem: [{ position: 70, label: 'Status' }],
+         identification: [{ position: 70, label: 'Status' }],
+         selectionField: [{ position: 30 }] }
+  OverallStatus;
+
+  @UI: { identification: [{ position: 80, label: 'Approved Amount' }] }
+  ApprovedAmount;
+}

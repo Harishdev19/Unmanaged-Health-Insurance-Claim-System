@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition - HIC Header and Items 22EE015'
+define service ZUHI_SD_22EE015 {
+  expose ZUHICP_HDR_22EE015 as ClaimHeader;
+  expose ZUHICP_ITM_22EE015 as ClaimItem;
+}

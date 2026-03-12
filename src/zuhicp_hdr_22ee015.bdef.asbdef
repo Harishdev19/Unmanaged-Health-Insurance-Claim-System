@@ -1,0 +1,17 @@
+projection;
+
+define behavior for ZUHICP_HDR_22EE015 alias ClaimHeader
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _ClaimItems { create; }
+}
+
+define behavior for ZUHICP_ITM_22EE015 alias ClaimItem
+{
+  use create;
+  use update;
+  use delete;
+}
